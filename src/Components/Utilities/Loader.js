@@ -2,10 +2,10 @@ import { CircularProgress } from "@mui/material";
 import { FULFILLED, PENDING, REJECTED } from "../../constants/posts";
 import { customLoaderStyle } from "../../constants/styles";
 
-function Loader({ status, result }) {
+function Loader({ status, result, defaultText }) {
   switch (status) {
     case PENDING: {
-      return <CircularProgress style={customLoaderStyle} />;
+      return <CircularProgress style={customLoaderStyle} size={60} />;
     }
 
     case FULFILLED: {
@@ -17,7 +17,7 @@ function Loader({ status, result }) {
     }
 
     default: {
-      return "Try typing Something";
+      return defaultText;
     }
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { HOME_PAGE_DEFAULT_TEXT } from "../../constants/posts";
 import { fetchPostsBySearchString } from "../../reduxSlices/posts";
 import Loader from "./Loader";
 import PostMini from "./PostMini";
@@ -22,7 +23,11 @@ class PostList extends React.Component {
 
     return (
       <div className="posts-list-container">
-        <Loader status={this.props?.status} result={posts} />
+        <Loader
+          status={this.props?.status}
+          result={posts}
+          defaultText={HOME_PAGE_DEFAULT_TEXT}
+        />
       </div>
     );
   }
