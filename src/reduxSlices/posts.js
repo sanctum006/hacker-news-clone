@@ -16,8 +16,8 @@ export const fetchPostsBySearchString = createAsyncThunk(
 
 export const fetchPostById = createAsyncThunk(
   "posts/fetchPostById",
-  async (payload) => {
-    const { id } = payload;
+  async (payload, { getState }) => {
+    const id = getState().routes.queryParams?.postId;
 
     return Promise.resolve({
       post: await getPostById(id),

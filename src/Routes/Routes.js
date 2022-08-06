@@ -9,7 +9,7 @@ export default () => {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/posts/:id">
+        <Route exact path="/post">
           <Post />
         </Route>
       </Switch>

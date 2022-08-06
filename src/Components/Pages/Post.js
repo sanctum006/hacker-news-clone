@@ -1,10 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
+import { fetchPostById } from "../../reduxSlices/posts";
 import { processQueryParams } from "../../reduxSlices/routes";
 
 class Post extends React.Component {
   componentDidMount() {
     this.props?.processQueryParams();
+    this.props?.fetchPostById();
   }
 
   render() {
@@ -19,6 +21,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     processQueryParams: () => dispatch(processQueryParams()),
+    fetchPostById: () => dispatch(fetchPostById()),
   };
 };
 
