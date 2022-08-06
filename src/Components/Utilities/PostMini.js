@@ -10,7 +10,7 @@ class PostMini extends React.Component {
   };
 
   render() {
-    return (
+    return this.props.title ? (
       <div className="post-mini-container">
         <div className="post-mini-left-container">{this.props.postNo}</div>
         <div className="post-mini-right-container">
@@ -18,7 +18,7 @@ class PostMini extends React.Component {
           <p>Created At: {this.getDate(this.props.createdAt)}</p>
         </div>
       </div>
-    );
+    ) : null;
   }
 }
 
