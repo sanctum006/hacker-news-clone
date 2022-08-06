@@ -10,12 +10,22 @@ class Post extends React.Component {
   }
 
   render() {
-    return <>YO!!</>;
+    return (
+      <div className="post-container">
+        {this.props?.title && <h1>{this.props.title}</h1>}
+        {this.props?.title && <p>Points: {this.props.points}</p>}
+        <h3>Commnets</h3>
+      </div>
+    );
   }
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    title: state.posts.activePost.title,
+    points: state.posts.activePost.points,
+    commnets: state.posts.activePost.children,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
