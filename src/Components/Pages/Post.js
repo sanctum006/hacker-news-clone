@@ -1,7 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import { fetchPostById } from "../../reduxSlices/posts";
 import { processQueryParams } from "../../reduxSlices/routes";
+import Loader from "./../Utilities/Loader";
 import Commnet from "../Utilities/Comment";
 
 class Post extends React.Component {
@@ -10,7 +12,7 @@ class Post extends React.Component {
     this.props?.fetchPostById();
   }
 
-  render() {
+  renderPostContent = () => {
     return (
       <div className="post-container">
         {this.props?.title && <h1>{this.props.title}</h1>}
@@ -21,6 +23,15 @@ class Post extends React.Component {
         ))}
       </div>
     );
+  };
+
+  render() {
+    return (
+      <Loader
+        status={this.props?.fetchStatus}
+        result={this.renderPostContent()}
+      />
+    );
   }
 }
 
@@ -29,6 +40,7 @@ const mapStateToProps = (state) => {
     title: state.posts.activePost?.title,
     points: state.posts.activePost?.points,
     commnets: state.posts.activePost?.children,
+    fetchStatus: state.posts.fetchActivePostStatus,
   };
 };
 

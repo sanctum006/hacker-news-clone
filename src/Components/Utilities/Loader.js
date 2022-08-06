@@ -5,7 +5,11 @@ import { customLoaderStyle } from "../../constants/styles";
 function Loader({ status, result, defaultText }) {
   switch (status) {
     case PENDING: {
-      return <CircularProgress style={customLoaderStyle} size={60} />;
+      return (
+        <div style={{ width: "100%", textAlign: "center" }}>
+          <CircularProgress style={customLoaderStyle} size={60} />
+        </div>
+      );
     }
 
     case FULFILLED: {
