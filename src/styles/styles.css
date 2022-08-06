@@ -1,0 +1,27 @@
+/* HomePage */
+
+.home-page-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Search Box */
+
+#search-box-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#search-box {
+  border: 2px solid #61dafb;
+  color: #61dafb;
+  font-family: monospace;
+  padding: 15px 25px;
+  outline: none;
+  max-width: 500px;
+}

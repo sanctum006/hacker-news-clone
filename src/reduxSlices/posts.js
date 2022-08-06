@@ -45,11 +45,10 @@ export const postsSlice = createSlice({
     },
     [fetchPostsBySearchString.fulfilled]: (state, action) => {
       state.fetchAllPostsStatus = FULFILLED;
-      state.posts = action.payload.posts;
+      state.posts = action.payload.posts?.hits;
     },
     [fetchPostsBySearchString.rejected]: (state, action) => {
       state.fetchAllPostsStatus = REJECTED;
-      console.log("fetchPostsBySearchString.rejected", action);
     },
     [fetchPostById.pending]: (state, action) => {
       state.fetchActivePostStatus = PENDING;

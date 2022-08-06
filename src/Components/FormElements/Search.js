@@ -1,3 +1,4 @@
+import { TextField } from "@mui/material";
 import { connect } from "react-redux";
 
 import { DELAY } from "../../constants/posts";
@@ -23,7 +24,14 @@ class Search extends Debounce {
 
   render() {
     return (
-      <input placeholder="TypeSomething" onChange={this.handleInputChange} />
+      <div id="search-box-container">
+        <TextField
+          id="search-box"
+          placeholder="Type Something..."
+          value={this.props?.searchString}
+          onChange={this.handleInputChange}
+        />
+      </div>
     );
   }
 }

@@ -1,10 +1,11 @@
 import "./App.css";
-import Search from "./Components/FormElements/Search";
+import HomePage from "./Components/Pages/HomePage";
+import "./styles/styles.css";
 
 function App() {
   return (
     <div className="App">
-      <Search />
+      <HomePage />
     </div>
   );
 }
