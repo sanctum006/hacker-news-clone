@@ -109,3 +109,23 @@
   text-align: left;
   width: 100%;
 }
+
+/* Comment */
+
+.comment-container {
+  display: flex;
+}
+
+.comment-container h3 {
+  margin: 5px;
+  padding: 5px;
+}
+
+.comment-container p {
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+}
