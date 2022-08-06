@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import { getPostById, getPostsBySearchString } from "../src/apis/posts";
-import { PENDING, REJECTED, FULFILLED } from "../src/constants/posts";
+import { getPostById, getPostsBySearchString } from "../apis/posts";
+import { PENDING, REJECTED, FULFILLED } from "../constants/posts";
 
 export const fetchPostsBySearchString = createAsyncThunk(
   "posts/fetchPostsBySearchString",
