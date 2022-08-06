@@ -5,8 +5,8 @@ import { PENDING, REJECTED, FULFILLED } from "../constants/posts";
 
 export const fetchPostsBySearchString = createAsyncThunk(
   "posts/fetchPostsBySearchString",
-  async (payload) => {
-    const { searchString } = payload;
+  async (payload, { getState }) => {
+    const searchString = getState().posts.searchString;
 
     return Promise.resolve({
       posts: await getPostsBySearchString(searchString),
@@ -34,7 +34,11 @@ export const postsSlice = createSlice({
     activePost: null,
     searchString: "",
   },
-  reducers: {},
+  reducers: {
+    updateSearchString: (state, action) => {
+      state.searchString = action.payload.value;
+    },
+  },
   extraReducers: {
     [fetchPostsBySearchString.pending]: (state, action) => {
       state.fetchAllPostsStatus = PENDING;
@@ -45,6 +49,7 @@ export const postsSlice = createSlice({
     },
     [fetchPostsBySearchString.rejected]: (state, action) => {
       state.fetchAllPostsStatus = REJECTED;
+      console.log("fetchPostsBySearchString.rejected", action);
     },
     [fetchPostById.pending]: (state, action) => {
       state.fetchActivePostStatus = PENDING;
@@ -59,6 +64,6 @@ export const postsSlice = createSlice({
   },
 });
 
-export const {} = postsSlice.actions;
+export const { updateSearchString } = postsSlice.actions;
 
 export default postsSlice.reducer;

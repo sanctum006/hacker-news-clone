@@ -1,25 +1,13 @@
 import { BASE_URL } from "./constants/index";
 
-export const getPostsBySearchString = (searchString) => {
-  fetch(`${BASE_URL}/search?query=${searchString}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({}),
-  })
+export const getPostsBySearchString = async (searchString) => {
+  return fetch(`${BASE_URL}/search?query=${searchString}`)
     .then((res) => res.json())
     .catch((err) => console.log(err));
 };
 
 export const getPostById = (id) => {
-  fetch(`${BASE_URL}/items/${id}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({}),
-  })
+  return fetch(`${BASE_URL}/items/${id}`)
     .then((res) => res.json())
     .catch((err) => console.log(err));
 };

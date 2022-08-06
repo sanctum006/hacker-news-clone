@@ -14,12 +14,14 @@ class Debounce extends React.Component {
       clearInterval(interval);
 
       interval = setTimeout(() => {
-        callback?.apply(context, args);
+        callback();
       }, delay);
     };
   };
 
-  render() {}
+  render() {
+    return <></>;
+  }
 }
 
 export default Debounce;

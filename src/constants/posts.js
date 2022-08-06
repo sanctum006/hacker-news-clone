@@ -1,3 +1,5 @@
 export const PENDING = "pending";
 export const FULFILLED = "fulfilled";
 export const REJECTED = "pending";
+
+export const DELAY = 700;
