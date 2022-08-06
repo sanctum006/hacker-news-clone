@@ -38,7 +38,7 @@
   max-width: 500px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   min-height: 300px;
   color: antiquewhite;
