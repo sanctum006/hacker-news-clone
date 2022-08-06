@@ -1,9 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
+import { fetchPostsBySearchString } from "../../reduxSlices/posts";
 import Loader from "./Loader";
 import PostMini from "./PostMini";
 
 class PostList extends React.Component {
+  componentDidMount() {
+    this?.props?.fetchPostsBySearchString();
+  }
+
   render() {
     const posts = this.props.posts?.map((post, index) => (
       <PostMini
@@ -30,4 +35,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(PostList);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchPostsBySearchString: () => dispatch(fetchPostsBySearchString()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostList);
