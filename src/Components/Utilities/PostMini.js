@@ -2,6 +2,8 @@ import React from "react";
 
 class PostMini extends React.Component {
   render() {
-    return <div></div>;
+    return <div>YO!!</div>;
   }
 }
+
+export default PostMini;

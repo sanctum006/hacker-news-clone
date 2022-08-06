@@ -25,3 +25,15 @@
   outline: none;
   max-width: 500px;
 }
+
+/* PostsList */
+
+.posts-list-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}

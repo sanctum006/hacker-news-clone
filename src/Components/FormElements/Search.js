@@ -27,7 +27,7 @@ class Search extends Debounce {
       <div id="search-box-container">
         <TextField
           id="search-box"
-          placeholder="Type Something..."
+          placeholder="Search"
           value={this.props?.searchString}
           onChange={this.handleInputChange}
         />
