@@ -9,10 +9,6 @@ import {
 import Debounce from "../Base/Debounce";
 
 class Search extends Debounce {
-  constructor(props) {
-    super(props);
-  }
-
   searchDebounce = this.debounce(this?.props?.fetchPosts, DELAY);
 
   handleInputChange = (e) => {

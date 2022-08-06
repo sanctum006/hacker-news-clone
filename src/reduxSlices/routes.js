@@ -1,4 +1,4 @@
-import { createAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import queryString from "query-string";
 
 export const routesSlice = createSlice({

@@ -84,15 +84,16 @@
   align-items: center;
   justify-content: center;
   min-height: 300px;
-  padding-top: 50px;
+  padding: 50px 0px;
+  overflow-x: hidden;
 }
 
 .post-container h1 {
   border: 2px solid #61dafb;
   color: aliceblue;
-  padding: 20px;
   max-width: 500px;
-  width: 100%;
+  width: 97%;
+  padding: 20px 0;
 }
 
 .post-container p {
@@ -115,6 +116,7 @@
 
 .comment-container {
   display: flex;
+  margin: 20px;
 }
 
 .comment-container h3 {
@@ -127,6 +129,4 @@
   margin: 5px;
   width: 100%;
   max-width: 450px;
-  display: flex;
-  flex-wrap: wrap;
 }

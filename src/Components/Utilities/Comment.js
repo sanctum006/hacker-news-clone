@@ -8,6 +8,7 @@ class Commnet extends React.Component {
           <img
             src="https://avatarfiles.alphacoders.com/148/thumb-148182.png"
             width={40}
+            alt="profile"
           />
         </div>
         <div className="comment-right-container">

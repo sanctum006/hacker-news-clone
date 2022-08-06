@@ -16,5 +16,5 @@ export const customLinkStyle = {
   color: "aliceblue",
   margin: "0px",
   padding: "0px",
-  width: "92%",
+  width: "91%",
 };

@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "../Components/Pages/HomePage";
 import Post from "../Components/Pages/Post";
 
-export default () => {
+const Routes = () => {
   return (
     <Router>
       <Switch>
@@ -16,3 +16,5 @@ export default () => {
     </Router>
   );
 };
+
+export default Routes;
