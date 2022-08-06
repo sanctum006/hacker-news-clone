@@ -5,8 +5,14 @@ import PostMini from "./PostMini";
 
 class PostList extends React.Component {
   render() {
-    const posts = this.props.posts?.map((post) => (
-      <PostMini key={post.objectID} post={post} />
+    const posts = this.props.posts?.map((post, index) => (
+      <PostMini
+        key={post.objectID}
+        title={post.title}
+        postNo={index + 1}
+        createdAt={post.created_at}
+        post={post}
+      />
     ));
 
     return (
